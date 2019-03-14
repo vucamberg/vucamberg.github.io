@@ -1,0 +1,634 @@
+@charset "utf-8";
+
+/* Styles for my Port
+* Vucamberg Santos ;  vuca.net@gmail.com
+*/
+
+
+// Fonts
+
+@import url('../fonts/?family=Roboto|Shadows+Into+Light');
+@import 'all.css';
+
+
+// Colors
+
+$p-color:#0061ff;
+$s-color:#aa00ff;
+$t-color:#5a1d78;
+$f-color:#ff9000;
+$i-color:#16ec00;
+
+$a-color:#F621CB;
+$b-color:#6DE352;
+$c-color:#FFFF00;
+
+$z-color:#fff;
+$y-color:#000;
+
+
+
+body{
+    scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    font-family:'Roboto',sans-serif;
+    h1{
+	font-size:3.4rem;
+	font-family:'Shadows Into Light', sans-serif;
+    }
+    h2{
+	color:$f-color;
+	font-size:2.4rem;
+	font-family:'Shadows Into Light', sans-serif;
+	text-align:center;
+    }
+}
+header{
+    z-index:2;
+}
+
+.container{
+    width:98vw;
+}
+.c-header{
+    position:fixed;
+    width:100vw;
+    left:0;
+    top:0;
+    background-color:$s-color;
+}
+.c-header-2{
+    position:fixed;
+    width:100vw;
+    left:0;
+    top:0;
+}
+
+
+nav ul{
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    li{
+	list-style:none;
+	height:80px;
+	display:flex;
+	flex-direction:column;
+	justify-items:center;
+	justify-content:center;
+	a{
+	    color:$z-color;
+	    text-decoration:none;
+	    font-weight:bold;
+	    font-size:1.2rem;
+	}
+    }
+}
+
+
+// Intro
+.intro{
+    background-color:$p-color;
+    color:$z-color;
+    display:grid;
+    grid-template: auto / repeat(12, 1fr);
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    &-text{
+	grid-area:1/ 2/ 1/ 8;
+    }
+    &-img{
+	grid-area:1/ 9/ 1/ 12;
+	img{
+	    border-radius:50%;
+	}
+    }
+    p{
+	font-size:1.3rem;
+    }
+    .status{
+	font-style:italic;
+	font-size:1.4rem;
+    }
+}
+
+
+//Jobs
+
+#jobs{
+    background-color:$t-color;
+    color:$z-color;
+    padding:0 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.jobs-container{
+    margin:0 auto;
+    
+    display:grid;
+    grid-template:auto/ repeat(12, 1fr);
+    grid-gap:20px;
+    .jobs-item{
+	grid-row-start: auto;
+	grid-column: auto / span 4;
+	h3{
+	    font-size:1.5rem;
+	}
+	p{
+	    font-size:1.2rem;
+	    text-align:justify;
+	}
+    }
+}
+
+// Portfolio
+#port{
+    padding:0 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.container-port{
+    margin:0 auto;
+    display:grid;
+    grid-template:auto/ repeat(12, 1fr);
+    .port-item{
+	overflow:hidden;
+	position:relative;
+	grid-row-start:auto;
+	grid-column:auto/span 4;
+	img{
+	    object-fit:cover;
+	}
+	h3{
+	    color:$z-color;
+	    position:absolute;
+	    text-align:center;
+	    top:0;
+	    width:100%;
+	    height:100%;
+	    opacity:0;
+	    transition:.4s;
+	    font-size:2rem;
+	}
+	&:hover{
+	    cursor:pointer;
+	}
+	&:hover h3{
+	    top:40%;
+	    opacity:1;
+	}
+	&:hover img{
+	    filter:grayscale(70%) blur(2px);
+	}
+    }
+    
+}
+
+//random colors
+
+.color-1{
+    background:$p-color;
+}
+.color-2{
+    background:$s-color;
+}
+.color-3{
+    background:$t-color;
+}
+.color-4{
+    background:$f-color;
+}
+.color-5{
+    background:$i-color;
+}
+.color-6{
+    background:$a-color;
+}
+.color-7{
+    background:$b-color;
+}
+
+
+
+// Section School
+
+#school{
+    padding:0 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:$p-color;
+    color:$z-color;
+}
+
+.school-container{
+    display:grid;
+    grid-template:auto/ repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap:20px;
+    .school-item{
+	h3{
+	    font-size:1.5rem;
+	}
+	p{
+	    font-size:1.2rem;
+	    text-align:justify;
+	}
+    }
+    
+}
+
+
+//Section technologies
+#tech{
+    padding:0 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:$t-color;
+    color:$z-color;    
+}
+
+.tab-list{
+    display:flex;
+    flex-direction:row;
+    justify-content:start;
+    width:100%;
+    margin:0;
+    padding:0;
+    .tab-header{
+	text-align:center;
+	min-width:80px;
+	max-width:200px;
+	list-style:none;
+	border-top-right-radius:8px;
+	border-top-left-radius:8px;
+	border:1px solid;
+	border-bottom:unset;
+	transition:.4s;
+	&:hover{
+	    cursor:pointer;
+	    background:$s-color;
+	}
+    }
+}
+.tab-body{
+    text-align:center;
+    padding:20px;
+    border:1px solid;
+    border-top-right-radius:8px;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    p{
+	//font-family:'Shadows Into Light', sans-serif;
+	color:$f-color;
+	font-size:1.4rem;
+	font-weigth:bold;
+	width:50%;
+	display:flex;
+	justify-content:space-between;
+	margin:0 auto;
+    }
+}
+
+.hidden-tab-body{
+    display:none;
+}
+
+.f-balls{
+    padding:0;
+    margin:0;
+    display:inline;
+    li{
+	content:" ";
+	display:inline-block;
+	list-style:initial;
+	width:15px;
+	height:15px;
+	border-radius:50%;
+	margin:auto 5px auto auto;
+    }
+    .balls-colored{
+	background:$f-color;
+    }
+    .balls-gray{
+	background:gray;
+    }
+    .balls-bigger{
+	transform:scale(1.1);
+    }
+    .balls-smaller{
+	transform:scale(.9);
+    }
+}
+
+#lang{
+    padding:0 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:$z-color;
+    color:$t-color;
+    .lang-container{
+	border:1px solid $s-color;
+	border-radius:8px;
+	p{
+	color:$t-color;
+	font-size:1.1rem;
+	font-weigth:bold;
+	width:50%;
+	display:flex;
+	justify-content:space-between;
+	margin:0 auto;
+	}
+	h3{
+	    font-size:1.4rem;
+	    text-align:center;
+	}
+	li{
+	    list-style:none;
+	}
+    }
+}
+
+
+
+//Footer
+
+#footer{
+    padding:0 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:$s-color;
+    color:$z-color;
+    h2{
+	font-size:1.4rem;
+	color:$z-color;	
+    }
+    p{
+	display:flex;
+	justify-content:space-between;
+	a{
+	    color:$z-color;
+	    text-decoration:none
+	}
+    }
+}
+
+
+
+
+//Diversos
+
+.rpsv-img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    display:block;
+}
+
+
+
+
+//Animations
+
+@keyframes ghostText{
+    from{opacity:0; transform:scale(.5);}
+    to{opacity:1;transform:scale(1);}
+}
+
+.c-ghost-text{
+    display:none;
+}
+.ghost-text{
+    animation-name:ghostText;
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
+}
+
+// Menu Mobile
+
+
+.nav{
+    position:relative;
+    overflow:hidden;
+}
+.mobile-menu{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:0;
+    left:-100vw;
+    width:100vw;
+    height:100vh;
+    margin-bottom:20px;
+    background:$s-color;
+    li{
+	text-align:center;
+	height:auto;
+    }
+}
+
+
+.c-f-burguer{
+    padding:0 20px;
+    display:flex;
+    justify-content:start;
+    .c-burguer{
+	height:50px;
+	width:50px;
+	display:flex;
+	flex-direction:column;
+	margin:5px 0;
+	//border:1px solid lighten(gray, 20);
+	//border-radius:5px;
+	padding:2px;
+	position:absolute;
+	z-index:2;
+	&:hover{
+	    cursor:pointer;
+	}
+	li{
+	    border-radius:8px;
+	    height:8px;
+	    width:50px;
+	    background:lighten(gray,20);
+	    margin-bottom:3px;
+	    &:last-child{
+		//margin-bottom:0;
+	    }
+	}
+    }
+}
+// animation MenuMobile
+
+@keyframes menu-mobile{
+    from{left:-100vw;opacity:1;}
+    to{left:0;opacity:1;}
+}
+
+.animation-menu-mobile{
+    animation-name:menu-mobile;
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
+    &-r{
+	animation-direction:reverse;
+    }
+}
+
+
+// animation burguer
+
+@keyframes burguerToX{
+    from{transform:rotate(0) translate(0,0);}
+    to{transform:rotate(45deg) translate(0, 23px);}
+}
+
+@keyframes burguerToX2{
+    from{transform:rotate(0) translate(0,0);}
+    to{transform:rotate(-45deg) translate(0, -23px);}
+}
+
+@keyframes burguerToEat{
+    from{height:8px;width:50px;opacity:1;}
+    to{height:8px;width:0;opacity:0;}
+}
+
+.c-first-bread{
+    animation-name:burguerToX;
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
+}
+.c-middle-meat{
+    animation-name:burguerToEat;
+    animation-duration:.4s;
+    animation-fill-mode:forwards;
+}
+.c-last-bread{
+    animation-name:burguerToX2;
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
+}
+
+// Medias Querys
+
+@media screen and (max-width:950px){
+    #port,#jobs,#school,#tech,#lang{
+	height:auto;
+	padding:80px 0px;
+	margin:0;
+    }
+
+    .body-container,.container-port,.jobs-container,.school-container,.tech-container,.lang-container,.footer-container{
+	padding: 0 20px;
+    }
+}
+
+@media screen and (max-width:850px){
+    #body{
+	height:auto;
+    }
+    .intro{
+	padding:110px 0 80px 0;
+	text-align:center;
+	position:relative;
+	display:flex;
+	flex-direction:column-reverse;
+	justify-content:center;
+	align-content:center;
+	.rpsv-img{
+	    width:300px;
+	}
+    }
+    .jobs-container{
+	display:flex;
+	flex-direction:column;
+    }
+    .container-port{
+	display:grid;
+	grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
+	grid-template-rows:auto;
+	.port-item{
+	    grid-column:auto;
+	}
+    }
+    #lang .lang-container p{
+	width:90%;
+    }
+}
+
+@media screen and (max-width:660px){
+    .tab-body p{
+	width:100%;
+    }
+}
+
+@media screen and (max-width:640px){
+    .port-item{
+	margin-bottom:20px;
+    }
+}
+
+@media screen and (max-width:485px){
+    #footer p{
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	span{
+	    display:block;
+	    margin-bottom:20px;
+	}
+    }
+    .lang-container{
+	border:unset !important;
+	.c-balls{
+	    display:flex;
+	    flex-direction:column;
+	    text-align:left;
+	    margin-bottom:10px !important;
+	}
+    }
+    
+}
+
+@media screen and (max-width:450px){
+    .school-container{
+	display:flex;
+	flex-direction:column;
+    }
+    .tab-header{
+	min-width:50px !important;
+    }
+}
+
+
+@media screen and (max-width:405px){
+    .tech-container{
+	.c-balls{
+	    display:flex;
+	    flex-direction:column;
+	    text-align:left;
+	    margin-bottom:20px !important;
+	}
+    }
+}
+
+@media screen and (max-width:340px){
+    .container-port {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	grid-template-rows: auto;
+    }    
+}

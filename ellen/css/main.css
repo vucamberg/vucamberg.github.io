@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+body{
+	background-image:url('../images/universe2.jpg');
+	background-repeat:repeat-y;
+	margin:0;
+}
+
+.icontainer{
+	width:95%;
+	margin:auto;
+	border:1px solid #3cf3ff;
+}
+
+.presentation h1, .presentation p{
+	color:#fff;
+	text-align:center;
+}
+.presentation h1{
+	font-size:40px;
+	padding:1%;
+	background-color:rgba(60,243,255,.5);
+	margin:0;
+	font-family:'Roboto',sans-serif;
+}
+.presentation p, .conclusion p{
+	color:#fff;
+	background-color:rgba(0,0,0,.5);
+	font-size:25px;
+	margin:0 auto;
+	padding:5% 20%;
+	font-family:'Raleway',sans-serif;
+}
+.phrases{
+	display:flex;
+	justify-content:center;
+	position:absolute;
+	color:#fff;
+	top:40%;
+	left:0;
+	width:100%;
+	font-size:25px;
+	margin:auto;
+	text-align:center;
+}
+
+
+
+/* Animation Phrases */
+
+@keyframes phrases-animation{
+	from{opacity:1;margin:auto;}
+	to{opacity:0; top:0; margin:auto;justify-content:center;z-index:-1;}
+}
+
+.divF{
+	position:relative;
+	width:30%;
+	display:inline-block;
+	margin:1%;
+	justify-content:center;
+}
+
+.divF img{
+	display:unset;
+	width:100%;
+	height:auto;
+	filter:grayscale(80%);
+	transition:.4s;
+}
+
+.divF:hover > img{
+	filter:grayscale(0);
+	box-shadow:1px 1px 4px 1px #3cf3ff;
+	cursor:pointer;
+	z-index;2;
+}
+
+.divF:hover > .phrases{
+	animation-name:phrases-animation;
+	animation-duration:.4s;
+	animation-fill-mode:forwards;
+}
+
+.is-hidden{
+	display:none !important;
+}
+
+/* Animation to images */
+
+@keyframes image-animation{
+	from{display:none;width:50%;opacity:0;margin:auto;}
+	to{display:inherit;width:100%;opacity:1;}
+}
+
+.show-images{
+	animation-name:image-animation;
+	animation-duration:.4s;
+	animation-fill-mode:forwards;
+}
+
+
+
+/* modal */
+
+
+.modal{
+	display:flex;
+	justify-content:center;
+	background-color:rgba(0,0,0,.8);
+	position:fixed;
+	width:100%;
+	height:100vh;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+.modal img{
+	width:50%;
+	display:block;
+	height:auto;
+	z-index:2;
+	margin:auto;
+}
+
+.modal .fBtns,.modal .fImage{
+	width:10%;
+	margin:auto;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+.modal .fImage{
+	width:90%;
+	flex-direction:column;
+}
+
+.theSpan{
+	width:33%;
+	text-align:center;
+	font-size:30px;
+	color:#fff;
+	background-color:#3cf3ff;
+	padding:5%;
+	margin:auto;
+	border-radius:50%;
+	font-weight:bold;
+	font-family:'Roboto',sans-serif;
+}
+.theSpan:hover{
+	cursor:pointer;
+	background-color:#00adb8;
+}
+.theSpan:active{
+	transform:scale(.8);
+}
+
+@media screen and (max-width:800px){
+	.is-hidden{
+		display:inline-block !important;
+	}
+}
+
+@media screen and (max-width:780px){
+	.phrases{
+		font-size:18px;
+	}
+}
+
+@media screen and (max-width:660px){
+	.divF{
+		width:48%;
+	}
+}
+
+@media screen and (max-width:450px){
+	.divF{
+		width:95%;
+	}
+
+}

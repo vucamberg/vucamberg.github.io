@@ -1,0 +1,77 @@
+/* PortFolio; Vucamberg Santos
+*  vuca.net@gmail.com
+*/
+
+window.addEventListener("scroll", function(){
+    ghostText();
+});
+
+window.onload=function(){
+    randomColor();
+    createTabList();
+}
+// Function to scroll the page
+const scrollMenu=(targetId)=>{
+    let position=document.querySelector(targetId).offsetTop;
+    window.scrollTo(0, position);   
+}
+
+
+// Function to animation ghost-text
+
+const ghostText=()=>{
+    let allText=document.querySelectorAll(".c-ghost-text");
+    allText.forEach((a,b,c)=>{
+	if(window.scrollY > a.offsetTop+400){
+	    a.classList.remove("c-ghost-text");
+	    a.classList.add("ghost-text");
+	}
+    });
+}
+
+// Function random colors in Portfolio section
+
+const randomColor=()=>{
+    let allTarget=document.querySelectorAll(".port-item");
+    allTarget.forEach((a,b,c)=>{
+	let i=Math.floor(Math.random()*5);
+	a.classList.add(`color-${i}`);
+    });
+}
+
+
+// Function to Create the TabList in Technologies
+
+const createTabList=()=>{
+
+    let div=document.createElement("div");
+    let divFP=document.createElement("div");
+    let ul=document.createElement("ul");
+    let allItens=document.querySelectorAll(".tech-item");
+    let titles=[],body=[];
+    let cont1=0, cont2=0;
+
+    allItens.forEach((a,b,c)=>{
+	
+	if(a.nodeName.toLowerCase()=="h3"){
+	    var li=document.createElement("li");
+	    li.appendChild(a);
+	    li.dataset.indextab=cont1++;
+	    li.classList.add("tab-header");
+	    ul.appendChild(li);
+	    window.alert(ul);
+	}else if(a.nodeName.toLowerCase()=="div"){
+	    a.classList.add("tab-item");
+	    a.dataset.itemtab=cont2++;
+	    divFP.appendChild(a);
+	}
+	
+    });
+
+    div.appendChild(ul);
+    div.appendChild(divFP);
+
+    document.querySelector(".tech-container").innerHTML="";
+    document.querySelector(".tech-container").appendChild(div);
+    
+}
